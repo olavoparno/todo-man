@@ -7,14 +7,14 @@ import TodoItem from '../TodoItem'
 class TodoList extends React.PureComponent {
 
   render() {
-    const { todoListItems } = this.props
+    const { todoListItems, services } = this.props
     const [firstItem] = todoListItems
     const shouldRenderList = typeof firstItem !== 'undefined' && !firstItem.error
 
     return (
       <STodoList>
         {shouldRenderList ? todoListItems.map(item => (
-          <TodoItem key={item.id} todoItem={item} />
+          <TodoItem key={item.id} todoItem={item} services={services} />
         ))
           : (
             <SErrorServer>
@@ -33,6 +33,7 @@ class TodoList extends React.PureComponent {
 
 TodoList.propTypes = {
   todoListItems: PropTypes.array,
+  services: PropTypes.object,
 }
 
 export default TodoList

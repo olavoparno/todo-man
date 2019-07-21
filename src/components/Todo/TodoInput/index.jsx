@@ -1,28 +1,62 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 
-import { STodoInput, STodoForm, STodoInputText, STodoInputButton } from './styled'
+import { STodoInput, STodoForm, STodoInputText, STodoInputButton, SToolTip } from './styled'
+import Modal from '../../Modal'
 
-class TodoInput extends React.Component {
+class TodoInput extends React.PureComponent {
 
   state = {
     inputValue: '',
+    newTodo: {
+      name: 'Default Todo',
+    },
+    showModal: false,
+    showToolTip: false,
+  }
+
+  textRef = React.createRef()
+
+  setShowModal = () => {
+    const { showModal } = this.state
+
+    this.setState({
+      showModal: !showModal,
+    })
   }
 
   handleAddTodo = (event) => {
-    const {
-      services: { addTodo, callBackRender },
-    } = this.props
-    const { inputValue: newTodoValue } = this.state
-    const todo = {
-      name: newTodoValue || 'Default Todo',
+    const { inputValue: newTodoValue, showToolTip } = this.state
+
+    if (!newTodoValue) {
+      this.setState({
+        showToolTip: !showToolTip,
+      })
+
+      setTimeout(() => {
+        this.setState({
+          showToolTip: false,
+        })
+      }, 500)
+
+      return event.preventDefault()
     }
 
-    addTodo(todo).then(() => {
-      callBackRender()
+    const todo = {
+      name: newTodoValue,
+    }
+
+    this.setState({
+      newTodo: todo,
     })
 
-    event.preventDefault()
+    this.textRef.current.value = ''
+
+    this.setShowModal()
+
+    return event.preventDefault()
   }
 
   handleChange = (event) => {
@@ -31,21 +65,45 @@ class TodoInput extends React.Component {
     })
   }
 
+  returnFilled = (filledTodo) => {
+    const {
+      services: { addTodo, callBackRender },
+    } = this.props
+
+    addTodo(filledTodo).then(() => callBackRender())
+  }
+
   render() {
+    const { newTodo, showModal, showToolTip } = this.state
 
     return (
-      <STodoInput>
+      <STodoInput id="todo-input">
+        {showModal
+          && (
+          <Modal
+            newTodo={newTodo}
+            onClose={() => this.setShowModal()}
+            callBack={this.returnFilled}
+          />
+          )
+        }
         <STodoForm onSubmit={event => this.handleAddTodo(event)}>
           <STodoInputText
+            ref={this.textRef}
             type="text"
-            placeholder="Type in TODO"
+            placeholder="Type in your new TODO"
             onChange={event => this.handleChange(event)}
           />
-          <STodoInputButton type="submit">Add TODO</STodoInputButton>
+          {showToolTip && <SToolTip />}
+          <STodoInputButton type="submit">
+            <FontAwesomeIcon icon={faPlusSquare} />
+            Add TODO
+          </STodoInputButton>
         </STodoForm>
       </STodoInput>
     )
   }
+
 }
 
 TodoInput.propTypes = {

@@ -6,12 +6,16 @@ export const STodoList = styled.div`
   background-color: white;
   height: auto;
   width: auto;
-  padding: 2rem;
+  padding: 1.3rem 2rem;
   display: flex;
   justify-content: start;
   align-items: left;
   flex-direction: column;
   ${SShadow(1, -1)}
+  .modal-close-button {
+    top: -0.5rem;
+    right: 0.5rem;
+  }
 `
 
 export const SErrorServer = styled.div`

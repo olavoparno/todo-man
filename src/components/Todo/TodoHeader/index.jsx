@@ -1,3 +1,21 @@
-import { STodoHeader } from './styled'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-export default STodoHeader
+const TodoHeader = (props) => {
+  const { children } = props
+
+  return (
+    <React.Fragment>
+      {children}
+    </React.Fragment>
+  )
+}
+
+TodoHeader.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+}
+
+export default TodoHeader
