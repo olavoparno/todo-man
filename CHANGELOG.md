@@ -1,3 +1,12 @@
+# [3.1.0](https://github.com/olavoparno/Todo-Man/compare/v3.0.4...v3.1.0) (2019-07-21)
+
+
+### Features
+
+* **project:** add material ui ([a54c8ce](https://github.com/olavoparno/Todo-Man/commit/a54c8ce))
+
+
+
 ## [3.0.4](https://github.com/olavoparno/Todo-Man/compare/v3.0.3...v3.0.4) (2019-07-21)
 
 
