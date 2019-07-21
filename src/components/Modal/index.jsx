@@ -71,6 +71,13 @@ class Modal extends React.PureComponent {
     })
   }
 
+  handleTagChange = (tags) => {
+    this.setState({
+      tags,
+      changes: true,
+    })
+  }
+
   render() {
     const { creationDate, description, dueDate, name, tags } = this.state
 
@@ -86,7 +93,7 @@ class Modal extends React.PureComponent {
           <span>Estimated Duration</span>
           <SModalInputText placeholder="2 hours" />
           <span>Tags</span>
-          <TagContainer todoTags={tags} />
+          <TagContainer onChangeCb={this.handleTagChange} odoTags={tags} />
           <span>Creation Date</span>
           <SModalInputText disabled defaultValue={creationDate} />
           <SModalButton

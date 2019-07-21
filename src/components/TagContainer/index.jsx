@@ -11,6 +11,8 @@ class TagContainer extends React.PureComponent {
   constructor(props) {
     super(props)
 
+    this.onChangeCb = props.onChangeCb
+
     this.state = {
       stateTags: props.todoTags || [],
       suggestions: suggestionsData,
@@ -21,13 +23,19 @@ class TagContainer extends React.PureComponent {
     const { stateTags } = this.state
     const tags = stateTags.slice(0)
     tags.splice(i, 1)
-    this.setState({ stateTags: tags })
+
+    this.onChangeCb(tags)
+
+    return this.setState({ stateTags: tags })
   }
 
   handleAddition = (tag) => {
     const { stateTags } = this.state
     const tags = [].concat(stateTags, tag)
-    this.setState({ stateTags: tags })
+
+    this.onChangeCb(tags)
+
+    return this.setState({ stateTags: tags })
   }
 
   render() {
@@ -37,8 +45,8 @@ class TagContainer extends React.PureComponent {
       <ReactTags
         tags={stateTags}
         suggestions={suggestions}
-        handleDelete={index => this.handleDelete(index)}
-        handleAddition={tag => this.handleAddition(tag)}
+        onDelete={index => this.handleDelete(index)}
+        onAddition={tag => this.handleAddition(tag)}
       />
     )
   }
@@ -47,6 +55,7 @@ class TagContainer extends React.PureComponent {
 
 TagContainer.propTypes = {
   todoTags: PropTypes.array,
+  onChangeCb: PropTypes.func,
 }
 
 export default TagContainer
