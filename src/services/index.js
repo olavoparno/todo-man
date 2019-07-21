@@ -5,14 +5,21 @@ const fetchTodos = (url, method = 'GET', bodyData = {}) => {
     headers: {
       'Content-Type': 'application/json',
     },
+    mode: 'cors',
   }
 
   switch (method.toUpperCase()) {
-    case 'GET':
-      options = { ...options, method: 'GET' }
-      break
     case 'POST':
       options = { ...options, method: 'POST', body: JSON.stringify(bodyData) }
+      break
+    case 'PUT':
+      options = { ...options, method: 'PUT', body: JSON.stringify(bodyData) }
+      break
+    case 'DELETE':
+      options = { ...options, method: 'DELETE' }
+      break
+    case 'GET':
+      options = { ...options, method: 'GET' }
       break
     default:
       options = { ...options, method: 'GET' }
@@ -40,8 +47,14 @@ const getTodoById = id => fetchTodos(`${endpointUrl}/${id}`, 'GET')
 
 const addTodo = todo => fetchTodos(endpointUrl, 'POST', todo)
 
+const deleteTodo = id => fetchTodos(`${endpointUrl}/${id}`, 'DELETE')
+
+const editTodo = (id, data) => fetchTodos(`${endpointUrl}/${id}`, 'PUT', data)
+
 export default {
   getAllTodos,
   getTodoById,
   addTodo,
+  deleteTodo,
+  editTodo,
 }
