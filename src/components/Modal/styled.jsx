@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { SBorder, SShadow } from '../../styles'
+import { SBorder, SShadow, SGenericInput } from '../../styles'
 
 export const SModal = styled.div`
   position: absolute;
@@ -67,10 +67,7 @@ export const SModalInputText = styled.input`
 `
 
 export const SModalInputButton = styled.button`
-  border-radius: 0.1rem;
-  border-style: none;
-  padding: 1rem;
-  margin: 0.5rem;
+  ${SGenericInput}
   background-color: rgba(147, 98, 245, 0.8);
   color: white;
   cursor: pointer;

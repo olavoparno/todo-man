@@ -6,6 +6,24 @@ import TodoItem from '../TodoItem'
 
 class TodoList extends React.PureComponent {
 
+  getSpanMessage = (hasError) => {
+    if (hasError) {
+      return (
+        <span>
+          There may be an error while fetching data. Please refresh the
+          <a href="https://codesandbox.io/s/geru-todo-jp8cc" rel="noopener noreferrer" target="_blank"> Server </a>
+          and try again
+        </span>
+      )
+    }
+
+    return (
+      <span>
+        Your TODO list is empty. Add one and start doing them right away.
+      </span>
+    )
+  }
+
   render() {
     const { todoListItems, services } = this.props
     const [firstItem] = todoListItems
@@ -19,19 +37,7 @@ class TodoList extends React.PureComponent {
         ))
           : (
             <SErrorServer>
-              {hasError
-                ? (
-                  <span>
-                    There may be an error while fetching data. Please refresh the
-                    <a href="https://codesandbox.io/s/geru-todo-jp8cc" rel="noopener noreferrer" target="_blank"> Server </a>
-                    and try again
-                  </span>
-                ) : (
-                  <span>
-                    Your TODO list is empty. Add one and start doing them right away.
-                  </span>
-                )
-              }
+              {this.getSpanMessage(hasError)}
             </SErrorServer>)
         }
       </STodoList>
