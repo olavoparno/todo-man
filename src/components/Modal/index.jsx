@@ -7,23 +7,23 @@ import { SModal, SModalCloseButton, SModalInput, SModalInputText, SModalInputBut
 import DateSelector from '../DatePicker'
 import TagContainer from '../TagContainer'
 
-import { getToday, fixOverflow } from '../../utils'
+import { getToday, fixOverflow, parseISO } from '../../utils'
 
 class Modal extends React.PureComponent {
 
   constructor(props) {
     super(props)
 
-    const { name, description, tags } = props.newTodo
+    const { name, description, dueDate, duration, tags } = props.newTodo
 
     this.state = {
       creationDate: getToday(),
       description: description || 'My Description',
-      dueDate: new Date(),
+      dueDate: parseISO(dueDate) || new Date(),
+      duration: duration || '1 hour',
       name: name || 'My TODO',
-      reminder: getToday(),
       changes: false,
-      tags,
+      tags: tags || [],
     }
 
     this.nameRef = React.createRef()
@@ -36,7 +36,7 @@ class Modal extends React.PureComponent {
 
   handleCallBack = (props) => {
     const { callBack, newTodo, onClose } = props
-    const { changes, creationDate, description, dueDate, name, reminder, tags } = this.state
+    const { changes, creationDate, description, dueDate, duration, name, tags } = this.state
 
     if (newTodo) {
       const returnTodo = {
@@ -44,8 +44,8 @@ class Modal extends React.PureComponent {
         creationDate,
         description,
         dueDate,
+        duration,
         name,
-        reminder,
         tags,
       }
 
@@ -79,7 +79,7 @@ class Modal extends React.PureComponent {
   }
 
   render() {
-    const { creationDate, description, dueDate, name, tags } = this.state
+    const { creationDate, description, dueDate, duration, name, tags } = this.state
 
     return (
       <SModal>
@@ -91,7 +91,7 @@ class Modal extends React.PureComponent {
           <span>Due Date</span>
           <DateSelector startDate={dueDate} handleChange={event => this.handleDateChange(event)} />
           <span>Estimated Duration</span>
-          <SModalInputText placeholder="2 hours" />
+          <SModalInputText name="duration" onChange={event => this.handleTextChange(event)} defaultValue={duration} />
           <span>Tags</span>
           <TagContainer onChangeCb={this.handleTagChange} todoTags={tags} />
           <span>Creation Date</span>
