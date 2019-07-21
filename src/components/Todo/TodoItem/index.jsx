@@ -47,6 +47,14 @@ class TodoItem extends React.PureComponent {
 
   returnFilled = filledTodo => this.saveEditChanges(filledTodo)
 
+  getModal = todoItem => (
+    <Modal
+      newTodo={todoItem}
+      onClose={() => this.setShowModal()}
+      callBack={this.returnFilled}
+    />
+  )
+
   render() {
     const { changes, showModal } = this.state
     const { todoItem } = this.props
@@ -54,13 +62,7 @@ class TodoItem extends React.PureComponent {
     return (
       <React.Fragment>
         {showModal
-          && (
-          <Modal
-            newTodo={todoItem}
-            onClose={() => this.setShowModal()}
-            callBack={this.returnFilled}
-          />
-          )
+          && this.getModal(todoItem)
         }
         <STodoItem id={todoItem.id}>
           <input

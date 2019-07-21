@@ -3,11 +3,12 @@ import { format, parseISO as parse } from 'date-fns'
 export const fixOverflow = (isLoading) => {
   if (typeof document !== 'undefined') {
     const body = document.querySelector('body')
+
     if (body) {
+      const overflowValue = isLoading ? 'hidden' : 'scroll'
+
       body.scrollIntoView()
-      body.style.overflow = isLoading
-        ? 'hidden'
-        : 'scroll'
+      body.style.overflow = overflowValue
     }
   }
 }

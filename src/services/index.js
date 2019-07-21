@@ -1,6 +1,6 @@
 const endpointUrl = 'https://jp8cc.sse.codesandbox.io/todos'
 
-const fetchTodos = (url, method = 'GET', bodyData = {}) => {
+const fetchTodos = (url, method = 'GET', bodyData) => {
   let options = {
     headers: {
       'Content-Type': 'application/json',
@@ -8,22 +8,10 @@ const fetchTodos = (url, method = 'GET', bodyData = {}) => {
     mode: 'cors',
   }
 
-  switch (method.toUpperCase()) {
-    case 'POST':
-      options = { ...options, method: 'POST', body: JSON.stringify(bodyData) }
-      break
-    case 'PUT':
-      options = { ...options, method: 'PUT', body: JSON.stringify(bodyData) }
-      break
-    case 'DELETE':
-      options = { ...options, method: 'DELETE' }
-      break
-    case 'GET':
-      options = { ...options, method: 'GET' }
-      break
-    default:
-      options = { ...options, method: 'GET' }
-      break
+  options = { ...options, method: method.toUpperCase() }
+
+  if (bodyData) {
+    options = { ...options, body: JSON.stringify(bodyData) }
   }
 
   return fetch(url, options)
@@ -43,8 +31,6 @@ const fetchTodos = (url, method = 'GET', bodyData = {}) => {
 
 const getAllTodos = () => fetchTodos(endpointUrl, 'GET')
 
-const getTodoById = id => fetchTodos(`${endpointUrl}/${id}`, 'GET')
-
 const addTodo = todo => fetchTodos(endpointUrl, 'POST', todo)
 
 const deleteTodo = id => fetchTodos(`${endpointUrl}/${id}`, 'DELETE')
@@ -53,7 +39,6 @@ const editTodo = (id, data) => fetchTodos(`${endpointUrl}/${id}`, 'PUT', data)
 
 export default {
   getAllTodos,
-  getTodoById,
   addTodo,
   deleteTodo,
   editTodo,
