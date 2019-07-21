@@ -93,7 +93,7 @@ class Modal extends React.PureComponent {
           <span>Estimated Duration</span>
           <SModalInputText placeholder="2 hours" />
           <span>Tags</span>
-          <TagContainer onChangeCb={this.handleTagChange} odoTags={tags} />
+          <TagContainer onChangeCb={this.handleTagChange} todoTags={tags} />
           <span>Creation Date</span>
           <SModalInputText disabled defaultValue={creationDate} />
           <SModalButton
