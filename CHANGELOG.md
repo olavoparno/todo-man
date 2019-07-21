@@ -1,3 +1,18 @@
+## [3.0.2](https://github.com/olavoparno/Todo-Man/compare/v3.0.1...v3.0.2) (2019-07-21)
+
+
+### Bug Fixes
+
+* **modal:** add parseISO to get dueDate and duration ([32cf71d](https://github.com/olavoparno/Todo-Man/commit/32cf71d))
+* **modal:** fix typo ([8ff19ce](https://github.com/olavoparno/Todo-Man/commit/8ff19ce))
+
+
+### Features
+
+* **modal:** add save button ([2f204eb](https://github.com/olavoparno/Todo-Man/commit/2f204eb))
+
+
+
 ## [3.0.1](https://github.com/olavoparno/Todo-Man/compare/v3.0.0...v3.0.1) (2019-07-21)
 
 
