@@ -15,7 +15,7 @@ export const SModal = styled.div`
   margin: 1rem 0;
 `
 
-export const SModalButton = styled.button`
+export const SModalCloseButton = styled.button`
   position: absolute;
   top: -1.1rem;
   right: 1rem;
@@ -24,6 +24,7 @@ export const SModalButton = styled.button`
   border-radius: 0.1rem;
   cursor: pointer;
   border: none;
+  background-color: transparent;
   svg {
     font-size: 13px;
   }
@@ -61,6 +62,29 @@ export const SModalInputText = styled.input`
   ${SBorder(0.2)}
   ${SShadow(1, 1)}
   &[disabled] {
+    ${SShadow(0, 0)}
+  }
+`
+
+export const SModalInputButton = styled.button`
+  border-radius: 0.1rem;
+  border-style: none;
+  padding: 1rem;
+  margin: 0.5rem;
+  background-color: rgba(147, 98, 245, 0.8);
+  color: white;
+  cursor: pointer;
+  ${SBorder(0.2)}
+  ${SShadow(1, 1)}
+  svg {
+    float: left;
+    margin-left: 0.5rem;
+  }
+  &:hover {
+    border: 1px 0 0 1px solid black;
+    ${SShadow(1, 1, 1, 'rgba(255, 195, 74, 0.3)')}
+  }
+  &:active {
     ${SShadow(0, 0)}
   }
 `

@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faPlusSquare, faTimes } from '@fortawesome/free-solid-svg-icons'
 
-import { SModal, SModalButton, SModalInput, SModalInputText } from './styled'
+import { SModal, SModalCloseButton, SModalInput, SModalInputText, SModalInputButton } from './styled'
 import DateSelector from '../DatePicker'
 import TagContainer from '../TagContainer'
 
@@ -96,14 +96,23 @@ class Modal extends React.PureComponent {
           <TagContainer onChangeCb={this.handleTagChange} todoTags={tags} />
           <span>Creation Date</span>
           <SModalInputText disabled defaultValue={creationDate} />
-          <SModalButton
+          <SModalInputButton
+            type="submit"
+            onClick={() => {
+              this.handleCallBack(this.props)
+            }}
+          >
+            <FontAwesomeIcon icon={faPlusSquare} />
+            Save TODO
+          </SModalInputButton>
+          <SModalCloseButton
             className="modal-close-button"
             onClick={() => {
               this.handleCallBack(this.props)
             }}
           >
             <FontAwesomeIcon icon={faTimes} />
-          </SModalButton>
+          </SModalCloseButton>
         </SModalInput>
       </SModal>
     )
