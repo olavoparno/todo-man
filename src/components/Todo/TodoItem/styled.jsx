@@ -10,7 +10,7 @@ export const STodoItem = styled.ul`
   list-style: none;
   margin: 0.5rem;
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   ${SBorder(1)}
   ${SShadow(0, 1)}
   @media (min-width: 768px) {

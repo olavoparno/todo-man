@@ -63,10 +63,12 @@ export const SModalInput = styled.div`
     ${SShadow(1, 1)}
     input {
       border: none;
-      font-size: 18px;
     }
     @media (min-width: 1024px) {
       margin: 1.5rem;
+      input {
+        font-size: 18px;
+      }
     }
   }
 `
