@@ -41,6 +41,8 @@ class TodoInput extends React.PureComponent {
         })
       }, 500)
 
+      this.textRef.current.focus()
+
       return event.preventDefault()
     }
 
@@ -73,19 +75,20 @@ class TodoInput extends React.PureComponent {
     addTodo(filledTodo).then(() => callBackRender())
   }
 
+  getModal = newTodo => (
+    <Modal
+      newTodo={newTodo}
+      onClose={() => this.setShowModal()}
+      callBack={this.returnFilled}
+    />
+  )
+
   render() {
     const { newTodo, showModal, showToolTip } = this.state
 
     return (
       <STodoInput id="todo-input">
-        {showModal
-          && (
-          <Modal
-            newTodo={newTodo}
-            onClose={() => this.setShowModal()}
-            callBack={this.returnFilled}
-          />
-          )
+        {showModal && this.getModal(newTodo)
         }
         <STodoForm onSubmit={event => this.handleAddTodo(event)}>
           <STodoInputText

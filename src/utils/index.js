@@ -4,12 +4,8 @@ export const fixOverflow = (isLoading) => {
   if (typeof document !== 'undefined') {
     const body = document.querySelector('body')
 
-    if (body) {
-      const overflowValue = isLoading ? 'hidden' : 'scroll'
-
-      body.scrollIntoView()
-      body.style.overflow = overflowValue
-    }
+    body && body.scrollIntoView()
+    if (body) body.style.overflow = isLoading ? 'hidden' : 'scroll'
   }
 }
 
