@@ -19,7 +19,7 @@ class TodoList extends React.PureComponent {
 
     return (
       <span>
-        Your TODO list is empty. Add one and start doing them right away.
+        Looks like your TODO list is empty.
       </span>
     )
   }

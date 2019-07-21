@@ -13,7 +13,6 @@ class TodoItem extends React.PureComponent {
 
     this.state = {
       showModal: false,
-      changes: false,
     }
   }
 
@@ -56,7 +55,7 @@ class TodoItem extends React.PureComponent {
   )
 
   render() {
-    const { changes, showModal } = this.state
+    const { showModal } = this.state
     const { todoItem } = this.props
 
     return (
@@ -69,7 +68,7 @@ class TodoItem extends React.PureComponent {
             type="text"
             value={todoItem.name}
             readOnly
-            onSubmit={() => changes && this.handleBlur(todoItem)}
+            disabled
           />
           <STodoEdit>
             <SButton onClick={() => this.setShowModal()}>
