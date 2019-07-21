@@ -10,6 +10,7 @@ class TodoList extends React.PureComponent {
     const { todoListItems, services } = this.props
     const [firstItem] = todoListItems
     const shouldRenderList = typeof firstItem !== 'undefined' && !firstItem.error
+    const hasError = typeof firstItem !== 'undefined' && !firstItem.error
 
     return (
       <STodoList>
@@ -18,11 +19,19 @@ class TodoList extends React.PureComponent {
         ))
           : (
             <SErrorServer>
-              <span>
-                There may be an error while fetching data. Please refresh the
-                <a href="https://codesandbox.io/s/geru-todo-jp8cc" rel="noopener noreferrer" target="_blank"> Server </a>
-                and try again
-              </span>
+              {hasError
+                ? (
+                  <span>
+                    There may be an error while fetching data. Please refresh the
+                    <a href="https://codesandbox.io/s/geru-todo-jp8cc" rel="noopener noreferrer" target="_blank"> Server </a>
+                    and try again
+                  </span>
+                ) : (
+                  <span>
+                    Your TODO list is empty. Add one and start doing them right away.
+                  </span>
+                )
+              }
             </SErrorServer>)
         }
       </STodoList>
