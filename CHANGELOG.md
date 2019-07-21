@@ -1,3 +1,13 @@
+## [3.0.1](https://github.com/olavoparno/Todo-Man/compare/v3.0.0...v3.0.1) (2019-07-21)
+
+
+### Bug Fixes
+
+* **tags:** add tag insertion and events naming ([6b3ff30](https://github.com/olavoparno/Todo-Man/commit/6b3ff30))
+* **todoList:** fix status message ([95492f0](https://github.com/olavoparno/Todo-Man/commit/95492f0))
+
+
+
 # [3.0.0](https://github.com/olavoparno/Todo-Man/compare/v2.0.0...v3.0.0) (2019-07-21)
 
 
