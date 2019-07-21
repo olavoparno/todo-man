@@ -7,7 +7,7 @@ import Loading from './components/Loading'
 
 import { fixOverflow } from './utils'
 
-class App extends React.Component {
+class App extends React.PureComponent {
 
   state = {
     isLoading: false,

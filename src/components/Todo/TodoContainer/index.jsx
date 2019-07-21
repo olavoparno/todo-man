@@ -5,7 +5,7 @@ import TodoHeader from '../TodoHeader'
 import TodoInput from '../TodoInput'
 import TodoList from '../TodoList'
 
-class TodoContainer extends React.Component {
+class TodoContainer extends React.PureComponent {
 
   state = {
     todoListItems: [],
