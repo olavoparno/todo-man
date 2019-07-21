@@ -12,4 +12,4 @@ export const fixOverflow = (isLoading) => {
   }
 }
 
-export const getToday = () => format(new Date(), 'DD-MM-YYYY')
+export const getToday = () => format(new Date(), 'dd-MM-yyyy')
