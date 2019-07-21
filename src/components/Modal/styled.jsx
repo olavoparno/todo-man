@@ -13,6 +13,9 @@ export const SModal = styled.div`
   justify-content: center;
   align-items: center;
   margin: 1rem 0;
+  @media (min-width: 1024px) {
+    margin: 2rem 0;
+  }
 `
 
 export const SModalCloseButton = styled.button`
@@ -28,6 +31,12 @@ export const SModalCloseButton = styled.button`
   svg {
     font-size: 13px;
   }
+  @media (min-width: 1024px) {
+    margin: 0 1.5rem;
+    svg {
+      font-size: 18px;
+    }
+  }
 `
 
 export const SModalInput = styled.div`
@@ -40,6 +49,10 @@ export const SModalInput = styled.div`
   flex-direction: column;
   span {
     margin: 0 0.5rem;
+    @media (min-width: 1024px) {
+      margin: 0 1.5rem;
+      font-size: 18px;
+    }
   }
   .react-datepicker-wrapper {
     border-radius: 0.1rem;
@@ -50,6 +63,10 @@ export const SModalInput = styled.div`
     ${SShadow(1, 1)}
     input {
       border: none;
+      font-size: 18px;
+    }
+    @media (min-width: 1024px) {
+      margin: 1.5rem;
     }
   }
 `
@@ -64,6 +81,10 @@ export const SModalInputText = styled.input`
   &[disabled] {
     ${SShadow(0, 0)}
   }
+  @media (min-width: 1024px) {
+    margin: 1.5rem;
+    font-size: 18px;
+  }
 `
 
 export const SModalInputButton = styled.button`
@@ -76,6 +97,10 @@ export const SModalInputButton = styled.button`
   svg {
     float: left;
     margin-left: 0.5rem;
+    @media (min-width: 1024px) {
+      margin-left: 0;
+      font-size: 20px;
+    }
   }
   &:hover {
     border: 1px 0 0 1px solid black;
@@ -83,5 +108,8 @@ export const SModalInputButton = styled.button`
   }
   &:active {
     ${SShadow(0, 0)}
+  }
+  @media (min-width: 1024px) {
+    font-size: 18px;
   }
 `

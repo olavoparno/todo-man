@@ -16,6 +16,13 @@ export const STodoList = styled.div`
     top: -0.5rem;
     right: 0.5rem;
   }
+  @media (min-width: 1024px) {
+    padding: 2.3rem 3rem;
+    .modal-close-button {
+      top: -1rem;
+      right: -0.5rem;
+    }
+  }
 `
 
 export const SErrorServer = styled.div`
@@ -35,5 +42,12 @@ export const SErrorServer = styled.div`
   a {
     cursor: pointer;
     text-decoration: none;
+  }
+  @media (min-width: 1024px) {
+    padding: 32px 0;
+    span {
+      padding: 30px;
+      font-size: 18px;
+    }
   }
 `

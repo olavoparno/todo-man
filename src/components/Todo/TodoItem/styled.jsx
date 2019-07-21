@@ -22,6 +22,13 @@ export const STodoItem = styled.ul`
       }
     }
   }
+  @media (min-width: 1024px) {
+    padding: 1.5rem;
+    margin: 1.5rem;
+    input {
+      font-size: 18px;
+    }
+  }
 `
 
 export const STodoEdit = styled.div`
@@ -36,11 +43,13 @@ export const SButton = styled.button`
   color: inherit;
   border: none;
   margin: 0.5rem;
-  padding: 0;
   font: inherit;
   cursor: pointer;
   outline: inherit;
   &:hover {
     transform: scale(1.05);
+  }
+  @media (min-width: 1024px) {
+    font-size: 18px;
   }
 `

@@ -9,6 +9,13 @@
   box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
 }
 
+@media (min-width: 1024px) {
+  .react-tags {
+    padding: 0 1.5rem;
+    margin: 1.5rem;
+  }
+}
+
 .react-tags {
   position: relative;
   padding: 6px 0 0 6px;
@@ -99,6 +106,12 @@
   -webkit-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
   box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
+}
+
+@media (min-width: 1024px) {
+  .react-tags__search-input {
+    font-size: 18px;
+  }
 }
 
 .react-tags__search-input::-ms-clear {

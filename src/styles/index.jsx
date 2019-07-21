@@ -15,4 +15,8 @@ export const SGenericInput = css`
   border-style: none;
   padding: 1rem;
   margin: 0.5rem;
+  @media (min-width: 1024px) {
+    padding: 2rem;
+    margin: 1.5rem;
+  }
 `

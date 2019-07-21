@@ -12,6 +12,10 @@ export const STodoInput = styled.div`
   .modal-close-button {
     top: -0.5rem;
     right: 0.5rem;
+    @media (min-width: 1024px) {
+      top: -1rem;
+      right: -0.5rem;
+    }
   }
 `
 
@@ -24,6 +28,10 @@ export const STodoForm = styled.form`
   background-color: white;
   ${SBorder(0.2)}
   ${SShadow(1, 1)}
+  @media (min-width: 1024px) {
+    padding: 3rem;
+    margin: 3rem;
+  }
 `
 
 export const STodoInputText = styled.input`
@@ -32,6 +40,10 @@ export const STodoInputText = styled.input`
   padding: 0.5rem;
   ${SBorder(0.2)}
   ${SShadow(1, 1)}
+  @media (min-width: 1024px) {
+    padding: 1.5rem;
+    font-size: 18px;
+  }
 `
 
 export const STodoInputButton = styled.button`
@@ -47,6 +59,10 @@ export const STodoInputButton = styled.button`
   svg {
     float: left;
     margin-left: 0.5rem;
+    @media (min-width: 1024px) {
+      margin-left: 1.5rem;
+      font-size: 20px;
+    }
   }
   &:hover {
     border: 1px 0 0 1px solid black;
@@ -54,6 +70,11 @@ export const STodoInputButton = styled.button`
   }
   &:active {
     ${SShadow(0, 0)}
+  }
+  @media (min-width: 1024px) {
+    padding: 1.5rem 0 1.5rem;
+    margin: 1.5rem 0 0;
+    font-size: 18px;
   }
 `
 
@@ -70,5 +91,13 @@ export const SToolTip = styled.div`
   color: white;
   &:after {
     content: 'Required'
+  }
+  @media (min-width: 1024px) {
+    padding: 1.5rem;
+    margin-top: 50px;
+    left: 11rem;
+    font-size: 18px;
+    width: 75px;
+    height: 20px;
   }
 `
