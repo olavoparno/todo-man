@@ -1,3 +1,5 @@
+import { format } from 'date-fns'
+
 export const fixOverflow = (isLoading) => {
   if (typeof document !== 'undefined') {
     const body = document.querySelector('body')
@@ -9,3 +11,5 @@ export const fixOverflow = (isLoading) => {
     }
   }
 }
+
+export const getToday = () => format(new Date(), 'DD-MM-YYYY')
