@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { SShadow, SBorder } from '../../../styles'
 
-export const STodoList = styled.div`
+export const STodoList = styled.ul`
   background-color: white;
   height: auto;
   width: auto;

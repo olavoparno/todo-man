@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { SShadow, SBorder } from '../../../styles'
 
-export const STodoItem = styled.ul`
+export const STodoItem = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,8 +11,8 @@ export const STodoItem = styled.ul`
   margin: 0.5rem;
   padding: 0.5rem;
   border-radius: 0.2rem;
-  ${SBorder(1)}
-  ${SShadow(0, 1)}
+  ${SBorder(1, 'rgba(189, 186, 186, 0.75)')}
+  ${SShadow(1, 1, 0, 'rgba(255, 105, 135, 0.3)')}
   @media (min-width: 768px) {
     input {
       border: none;
@@ -28,6 +28,17 @@ export const STodoItem = styled.ul`
     input {
       font-size: 18px;
     }
+  }
+`
+
+export const STodoText = styled.input`
+  border-radius: 0.1rem;
+  border-style: none;
+  border: none;
+  color: black;
+  @media (min-width: 1024px) {
+    padding: 1.5rem;
+    font-size: 18px;
   }
 `
 

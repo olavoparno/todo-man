@@ -11,8 +11,12 @@
 
 @media (min-width: 1024px) {
   .react-tags {
-    padding: 0 1.5rem;
+    padding: 1rem 1.5rem !important;
     margin: 1.5rem;
+  }
+
+  .react-tags__selected-tag {
+    margin: 10px 10px 10px 0;
   }
 }
 

@@ -6,8 +6,8 @@ export const SShadow = (hLength = 1, vLength = 1, radius = 0, rgbaColor = 'rgba(
   box-shadow: ${hLength}px ${vLength}px ${radius}px ${radius}px ${rgbaColor};
 `
 
-export const SBorder = (thickness = 0.2) => css`
-  border: 1px solid rgba(94, 94, 94, ${thickness});
+export const SBorder = (thickness = 0.2, rgbaColor = 'rgba(94, 94, 94, 0.75)') => css`
+  border: ${thickness}px solid ${rgbaColor};
 `
 
 export const SGenericInput = css`

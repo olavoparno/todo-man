@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Button, Input } from '@material-ui/core'
 
 import { SShadow, SBorder } from '../../../styles'
 
@@ -26,55 +27,56 @@ export const STodoForm = styled.form`
   padding: 2rem;
   margin: 2rem;
   background-color: white;
-  ${SBorder(0.2)}
-  ${SShadow(1, 1)}
+  ${SBorder(1, 'rgba(189, 186, 186, 0.75)')}
+  ${SShadow(1, 1, 0, 'rgba(125, 124, 124, 0.75)')}
   @media (min-width: 1024px) {
     padding: 3rem;
     margin: 3rem;
   }
 `
 
-export const STodoInputText = styled.input`
+export const STodoInputText = styled(Input)`o
   border-radius: 0.1rem;
   border-style: none;
   padding: 0.5rem;
-  ${SBorder(0.2)}
-  ${SShadow(1, 1)}
+  margin: 0.5rem 0;
+  ${SBorder(1, 'rgba(189, 186, 186, 0.75)')}
   @media (min-width: 1024px) {
     padding: 1.5rem;
-    font-size: 18px;
+    input {
+      font-size: 18px;
+    }
   }
 `
 
-export const STodoInputButton = styled.button`
-  border-radius: 0.1rem;
+export const STodoInputButton = styled(Button)`
   border-style: none;
-  padding: 0.5rem 0 0.5rem;
   margin: 0.5rem 0 0;
-  background-color: rgba(147, 98, 245, 0.8);
-  color: white;
   cursor: pointer;
-  ${SBorder(0.2)}
-  ${SShadow(1, 1)}
+  background: linear-gradient(45deg, #fb4b71 30%, #ff8e99 90%);
+  border-radius: 3px;
+  border: 0;
+  color: white;
+  padding: 0.5rem 0 0.5rem;
+  ${SShadow(1, 1, 1, 'rgba(255, 105, 135, 0.3)')}
   svg {
     float: left;
-    margin-left: 0.5rem;
+    margin: 0 0.5rem;
+    color: white;
     @media (min-width: 1024px) {
       margin-left: 1.5rem;
       font-size: 20px;
     }
   }
-  &:hover {
-    border: 1px 0 0 1px solid black;
-    ${SShadow(1, 1, 1, 'rgba(255, 195, 74, 0.3)')}
-  }
-  &:active {
-    ${SShadow(0, 0)}
+  span {
+    color: white;
   }
   @media (min-width: 1024px) {
-    padding: 1.5rem 0 1.5rem;
-    margin: 1.5rem 0 0;
-    font-size: 18px;
+    margin: 1.5rem 0 0 !important;
+    height: 5rem;
+    span {
+      font-size: 18px;
+    }
   }
 `
 
@@ -86,16 +88,18 @@ export const SToolTip = styled.div`
   height: 15px;
   background-color: orangered;
   left: 6rem;
-  margin-top: 25px;
+  margin-top: 3rem;
   padding: 0.5rem;
   color: white;
+  z-index: 1;
+  ${SShadow(1, 1, 0, 'rgba(125, 124, 124, 0.75)')}
   &:after {
     content: 'Required'
   }
   @media (min-width: 1024px) {
     padding: 1.5rem;
-    margin-top: 50px;
-    left: 11rem;
+    margin-top: 5rem;
+    left: 10rem;
     font-size: 18px;
     width: 75px;
     height: 20px;

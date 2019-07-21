@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
 
-import { STodoItem, STodoEdit, SButton } from './styled'
+import { STodoItem, STodoEdit, SButton, STodoText } from './styled'
 import Modal from '../../Modal'
 
 class TodoItem extends React.PureComponent {
@@ -64,7 +64,7 @@ class TodoItem extends React.PureComponent {
           && this.getModal(todoItem)
         }
         <STodoItem id={todoItem.id}>
-          <input
+          <STodoText
             type="text"
             value={todoItem.name}
             readOnly

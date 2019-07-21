@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { Button, Input } from '@material-ui/core'
 
-import { SBorder, SShadow, SGenericInput } from '../../styles'
+import { SBorder, SShadow } from '../../styles'
 
 export const SModal = styled.div`
   position: absolute;
@@ -13,6 +14,7 @@ export const SModal = styled.div`
   justify-content: center;
   align-items: center;
   margin: 1rem 0;
+  z-index: 1;
   @media (min-width: 1024px) {
     margin: 2rem 0;
   }
@@ -57,53 +59,80 @@ export const SModalInput = styled.div`
   .react-datepicker-wrapper {
     border-radius: 0.1rem;
     border-style: none;
+    padding: 1rem;
     margin: 0.5rem;
-    padding: 0.5rem;
-    ${SBorder(0.2)}
-    ${SShadow(1, 1)}
+    ${SBorder(1, 'rgba(189, 186, 186, 0.75)')}
+    border-bottom: 0.14rem solid gray;
+    @media (min-width: 1024px) {
+      padding: 0.5rem;
+      input {
+        padding: 1.5rem;
+        font-size: 18px;
+      }
+    }
     input {
       border: none;
     }
+    .react-datepicker__input-container {
+      display: flex;
+      overflow: hidden;
+      input {
+        flex-grow: 1
+      }
+    }
     @media (min-width: 1024px) {
-      margin: 1.5rem;
+      margin: 0.5rem 1.5rem 1.5rem;
       input {
         font-size: 18px;
       }
+      
     }
   }
 `
 
-export const SModalInputText = styled.input`
+export const SModalInputText = styled(Input)`
   border-radius: 0.1rem;
   border-style: none;
-  margin: 0.5rem;
   padding: 0.5rem;
-  ${SBorder(0.2)}
-  ${SShadow(1, 1)}
+  margin: 0.5rem;
+  ${SBorder(1, 'rgba(189, 186, 186, 0.75)')}
+  @media (min-width: 1024px) {
+    input {
+      padding: 1.5rem;
+      font-size: 18px;
+    }
+  }
   &[disabled] {
     ${SShadow(0, 0)}
   }
   @media (min-width: 1024px) {
-    margin: 1.5rem;
+    margin: 0.5rem 1.5rem 1.5rem;
     font-size: 18px;
   }
 `
 
-export const SModalInputButton = styled.button`
-  ${SGenericInput}
-  background-color: rgba(147, 98, 245, 0.8);
-  color: white;
+export const SModalInputButton = styled(Button)`
+  border-style: none;
+  border-radius: 3px;
+  border: 0;
   cursor: pointer;
-  ${SBorder(0.2)}
-  ${SShadow(1, 1)}
-  svg {
-    float: left;
-    margin-left: 0.5rem;
-    @media (min-width: 1024px) {
-      margin-left: 0;
-      font-size: 20px;
+  background: linear-gradient(45deg, #fb4b71 30%, #ff8e99 90%);
+  color: white;
+  height: 48px;
+  padding: 0.5rem;
+  margin: 0.5rem !important;
+  span {
+    color: white;
+    svg {
+      float: left;
+      margin: 0 0.5rem;
+      @media (min-width: 1024px) {
+        margin-left: 0;
+        font-size: 20px;
+      }
     }
   }
+  ${SShadow(1, 1, 1, 'rgba(255, 105, 135, 0.3)')}    
   &:hover {
     border: 1px 0 0 1px solid black;
     ${SShadow(1, 1, 1, 'rgba(255, 195, 74, 0.3)')}
@@ -113,5 +142,7 @@ export const SModalInputButton = styled.button`
   }
   @media (min-width: 1024px) {
     font-size: 18px;
+    height: 5rem;
+    margin: 1.5rem !important;
   }
 `
