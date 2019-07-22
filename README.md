@@ -8,6 +8,7 @@
 * A simple and straigthforward TODO manager in order to keep your routine flowing
 
 ## Online Demo
+* Please open [this link](https://codesandbox.io/s/geru-todo-jp8cc) and refresh the page in order to start up the server. The same goes for development purposes
 * Click here to preview -> [Todo Man](https://todoman.netlify.com/)
 
 ### Setup Development Environment
