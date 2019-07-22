@@ -129,6 +129,12 @@
   width: 100%;
 }
 
+@media (min-width: 1024px) {
+  .react-tags__suggestions li mark {
+    font-size: 18px;
+  }
+}
+
 @media screen and (min-width: 30em) {
 
   .react-tags__suggestions {

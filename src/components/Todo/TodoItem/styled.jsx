@@ -24,7 +24,7 @@ export const STodoItem = styled.li`
   }
   @media (min-width: 1024px) {
     padding: 1.5rem;
-    margin: 1.5rem;
+    margin: 1rem 1rem;
     input {
       font-size: 18px;
     }

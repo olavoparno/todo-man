@@ -25,17 +25,17 @@ export const STodoForm = styled.form`
   flex-direction: column;
   width: 100%;
   padding: 2rem;
-  margin: 2rem;
+  margin: 2rem 2rem 0.5rem;
   background-color: white;
   ${SBorder(1, 'rgba(189, 186, 186, 0.75)')}
   ${SShadow(1, 1, 0, 'rgba(125, 124, 124, 0.75)')}
   @media (min-width: 1024px) {
     padding: 3rem;
-    margin: 3rem;
+    margin: 3rem 3rem 1rem;
   }
 `
 
-export const STodoInputText = styled(Input)`o
+export const STodoInputText = styled(Input)`
   border-radius: 0.1rem;
   border-style: none;
   padding: 0.5rem;
