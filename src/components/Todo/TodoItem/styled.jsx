@@ -36,6 +36,7 @@ export const STodoText = styled.input`
   border-style: none;
   border: none;
   color: black;
+  background-color: transparent;
   @media (min-width: 1024px) {
     padding: 1.5rem;
     font-size: 18px;
