@@ -22,7 +22,7 @@ class Modal extends React.PureComponent {
       dueDate: dueDate ? parseISO(dueDate) : new Date(),
       duration: duration || '1 hour',
       name: name || 'My TODO',
-      changes: false,
+      changes: true,
       tags: tags || [],
     }
 
@@ -100,6 +100,7 @@ class Modal extends React.PureComponent {
   }
 
   render() {
+    const { onClose } = this.props
 
     return (
       <SModal>
@@ -117,7 +118,7 @@ class Modal extends React.PureComponent {
           <SModalCloseButton
             className="modal-close-button"
             onClick={() => {
-              this.handleCallBack(this.props)
+              onClose()
             }}
           >
             <FontAwesomeIcon icon={faTimes} />
@@ -131,6 +132,7 @@ class Modal extends React.PureComponent {
 
 Modal.propTypes = {
   newTodo: PropTypes.object,
+  onClose: PropTypes.func,
 }
 
 export default Modal
