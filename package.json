@@ -18,6 +18,7 @@
     "styled-components": "4.3.2"
   },
   "devDependencies": {
+    "@olavoparno/jest-badges-readme": "^1.3.6",
     "conventional-changelog-cli": "^2.0.21",
     "eslint": "5.6.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -30,14 +31,31 @@
     "eslint-plugin-react": "7.11.1",
     "eslint-plugin-scanjs-rules": "0.2.1",
     "eslint-plugin-security": "1.4.0",
-    "prop-types": "^15.7.2"
+    "husky": "^3.0.1",
+    "prop-types": "^15.7.2",
+    "react-test-renderer": "^16.8.6"
   },
   "scripts": {
+    "prebuild": "echo nok > .buildstatus",
+    "postbuild": "echo ok > .buildstatus",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "make-badges": "node_modules/.bin/jest-badges-readme",
     "eject": "react-scripts eject",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test && node_modules/.bin/jest-badges-readme && git add 'README.md'"
+    }
+  },
+  "jest": {
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ]
   },
   "browserslist": [
     ">0.2%",
