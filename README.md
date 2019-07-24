@@ -6,7 +6,7 @@
 
 | Statements | Branches | Functions | Lines |
 | -----------|----------|-----------|-------|
-| ![Statements](https://img.shields.io/badge/Coverage-35.37%25-red.svg "Make me better!") | ![Branches](https://img.shields.io/badge/Coverage-30.88%25-red.svg "Make me better!") | ![Functions](https://img.shields.io/badge/Coverage-27.71%25-red.svg "Make me better!") | ![Lines](https://img.shields.io/badge/Coverage-34.89%25-red.svg "Make me better!") |
+| ![Statements](https://img.shields.io/badge/Coverage-29.27%25-red.svg "Make me better!") | ![Branches](https://img.shields.io/badge/Coverage-27.94%25-red.svg "Make me better!") | ![Functions](https://img.shields.io/badge/Coverage-22.89%25-red.svg "Make me better!") | ![Lines](https://img.shields.io/badge/Coverage-28.94%25-red.svg "Make me better!") |
 
 ## Motivation
 * A simple and straigthforward TODO manager in order to keep your routine flowing
@@ -31,6 +31,8 @@
    - Used to provide simple icons
 5. [conventional-changelog-cli](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli)
    - Adopted in order to keep track of releases and its changes
+6. [jest-badges-readme](https://github.com/olavoparno/jest-badges-readme)
+   - Keeping track of visual test coverage motivating test completeness
 
 ### TODO
 * A better state management implementation

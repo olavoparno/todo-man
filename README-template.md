@@ -31,6 +31,8 @@
    - Used to provide simple icons
 5. [conventional-changelog-cli](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli)
    - Adopted in order to keep track of releases and its changes
+6. [jest-badges-readme](https://github.com/olavoparno/jest-badges-readme)
+   - Keeping track of visual test coverage motivating test completeness
 
 ### TODO
 * A better state management implementation
