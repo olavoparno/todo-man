@@ -1,3 +1,12 @@
+# [3.2.0](https://github.com/olavoparno/Todo-Man/compare/v3.1.1...v3.2.0) (2019-07-24)
+
+
+### Bug Fixes
+
+* **todoItem:** remove background color from input ([af00565](https://github.com/olavoparno/Todo-Man/commit/af00565))
+
+
+
 ## [3.1.1](https://github.com/olavoparno/Todo-Man/compare/v3.1.0...v3.1.1) (2019-07-22)
 
 
