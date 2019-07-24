@@ -6,7 +6,7 @@
 
 | Statements | Branches | Functions | Lines |
 | -----------|----------|-----------|-------|
-| ![Statements](https://img.shields.io/badge/Coverage-2.78%25-red.svg "Make me better!") | ![Branches](https://img.shields.io/badge/Coverage-0%25-red.svg "Make me better!") | ![Functions](https://img.shields.io/badge/Coverage-2.44%25-red.svg "Make me better!") | ![Lines](https://img.shields.io/badge/Coverage-2.91%25-red.svg "Make me better!") |
+| ![Statements](https://img.shields.io/badge/Coverage-35.37%25-red.svg "Make me better!") | ![Branches](https://img.shields.io/badge/Coverage-30.88%25-red.svg "Make me better!") | ![Functions](https://img.shields.io/badge/Coverage-27.71%25-red.svg "Make me better!") | ![Lines](https://img.shields.io/badge/Coverage-34.89%25-red.svg "Make me better!") |
 
 ## Motivation
 * A simple and straigthforward TODO manager in order to keep your routine flowing
