@@ -1,24 +1,137 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DateSelector component matches the snapshot 1`] = `
-<div
-  className="react-datepicker-wrapper"
->
-  <div
-    className="react-datepicker__input-container"
-  >
-    <input
-      className=""
-      disabled={false}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      readOnly={false}
-      type="text"
-      value="22/07/2019, 23:15"
-    />
-  </div>
-</div>
+exports[`DateSelector component should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <DateSelector
+    startDate={2019-07-23T02:15:02.000Z}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "allowSameDay": false,
+      "dateFormat": "Pp",
+      "dateFormatCalendar": "LLLL yyyy",
+      "disabled": false,
+      "disabledKeyboardNavigation": false,
+      "dropdownMode": "scroll",
+      "inlineFocusSelectedMonth": false,
+      "locale": "pt",
+      "monthsShown": 1,
+      "nextMonthButtonLabel": "Next month",
+      "onBlur": [Function],
+      "onChange": [Function],
+      "onClickOutside": [Function],
+      "onFocus": [Function],
+      "onInputClick": [Function],
+      "onInputError": [Function],
+      "onKeyDown": [Function],
+      "onMonthChange": [Function],
+      "onSelect": [Function],
+      "onYearChange": [Function],
+      "preventOpenOnFocus": false,
+      "previousMonthButtonLabel": "Previous Month",
+      "readOnly": false,
+      "renderDayContents": [Function],
+      "selected": 2019-07-23T02:15:02.000Z,
+      "shouldCloseOnSelect": true,
+      "showMonthYearPicker": false,
+      "showTimeInput": false,
+      "showTimeSelect": true,
+      "strictParsing": false,
+      "timeCaption": "Time",
+      "timeFormat": "p",
+      "timeInputLabel": "Time",
+      "timeIntervals": 15,
+      "withPortal": false,
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "allowSameDay": false,
+        "dateFormat": "Pp",
+        "dateFormatCalendar": "LLLL yyyy",
+        "disabled": false,
+        "disabledKeyboardNavigation": false,
+        "dropdownMode": "scroll",
+        "inlineFocusSelectedMonth": false,
+        "locale": "pt",
+        "monthsShown": 1,
+        "nextMonthButtonLabel": "Next month",
+        "onBlur": [Function],
+        "onChange": [Function],
+        "onClickOutside": [Function],
+        "onFocus": [Function],
+        "onInputClick": [Function],
+        "onInputError": [Function],
+        "onKeyDown": [Function],
+        "onMonthChange": [Function],
+        "onSelect": [Function],
+        "onYearChange": [Function],
+        "preventOpenOnFocus": false,
+        "previousMonthButtonLabel": "Previous Month",
+        "readOnly": false,
+        "renderDayContents": [Function],
+        "selected": 2019-07-23T02:15:02.000Z,
+        "shouldCloseOnSelect": true,
+        "showMonthYearPicker": false,
+        "showTimeInput": false,
+        "showTimeSelect": true,
+        "strictParsing": false,
+        "timeCaption": "Time",
+        "timeFormat": "p",
+        "timeInputLabel": "Time",
+        "timeIntervals": 15,
+        "withPortal": false,
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+}
 `;

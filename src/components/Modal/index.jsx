@@ -30,8 +30,10 @@ class Modal extends React.PureComponent {
   }
 
   componentDidMount() {
-    this.nameRef.current.focus()
-    fixOverflow(true)
+    if (process.env.NODE_ENV !== 'test') {
+      this.nameRef.current.focus()
+      fixOverflow(true)
+    }
   }
 
   handleCallBack = (props) => {

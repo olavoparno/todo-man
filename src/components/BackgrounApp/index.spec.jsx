@@ -1,22 +1,24 @@
 import React from 'react'
-import { create } from 'react-test-renderer'
+import { mount } from 'enzyme'
 
 import BackgroundApp from './index'
 
 describe('BackgroundApp component', () => {
-  let backgroundApp
-
+  let component
   beforeAll(() => {
-    backgroundApp = create(
+    component = mount(
       <BackgroundApp>
-        <span>Sasasa</span>
+        <span>Child</span>
       </BackgroundApp>,
     )
   })
-  it('matches the snapshot', () => {
-    expect(backgroundApp.toJSON()).toMatchSnapshot()
+  it('should render correctly', () => {
+    expect(component).toMatchSnapshot()
   })
   it('should contain children', () => {
-    expect(backgroundApp.toJSON().children.length).toBeGreaterThan(0)
+    expect(component.find('div').children().length).toBeGreaterThan(0)
+  })
+  it('should contain a span under children', () => {
+    expect(component.find('div').children().find('span')).toBeDefined()
   })
 })
